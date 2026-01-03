@@ -2,27 +2,26 @@
 
 int main()
 {
-    int marks[5];
-    int i, total = 0;
+    int n, i, total = 0;
     float percentage;
 
-    // Input marks
-    printf("Enter marks for 5 subjects:\n");
-    for (i = 0; i < 5; i++)
+    printf("Enter number of subjects: ");
+    scanf("%d", &n);
+
+    int marks[n];   // Variable Length Array
+
+    for (i = 0; i < n; i++)
     {
         printf("Subject %d: ", i + 1);
         scanf("%d", &marks[i]);
-        total = total + marks[i];
+        total += marks[i];
     }
 
-    // Calculate percentage
-    percentage = total / 5.0;
+    percentage = (float)total / n;
 
-    // Display total and percentage
     printf("\nTotal Marks = %d", total);
     printf("\nPercentage = %.2f%%\n", percentage);
 
-    // Grade calculation
     if (percentage >= 90)
         printf("Grade: A");
     else if (percentage >= 75)
